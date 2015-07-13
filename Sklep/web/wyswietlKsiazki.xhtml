@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http:www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./szablon.xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html">
+    <ui:define name="content">
+        Lista ksiazek
+        <h:form>
+            <table>
+                <tr><th>Edycja</th><th>Kupno</th><th>Tytul</th></tr>
+                <ui:repeat value="#{ksiegarniaBean.lista}" var="ksiazka">
+                    <tr>
+                        <td>
+                            <h:commandLink value="Edycja"
+                                           action="#{ksiegarniaBean.zaladujDoEdycji}"
+                                           actionListener="#{ksiegarniaBean.ksiazkaListener}">
+                                <f:param name="ksiazka.id" 
+                                         value="#{ksiazka.id}"/>
+                            </h:commandLink>
+                        </td>
+                        <td>
+                            <h:commandLink value="Kupno"
+                                           action="#{ksiegarniaBean.kup}"
+                                           actionListener="#{ksiegarniaBean.ksiazkaListener}">
+                                <f:param name="ksiazkaID"
+                                         value="#{ksiazka.id}"/>
+                            </h:commandLink>
+                        </td>
+                        <td>#{ksiazka.tytul}</td>
+                        
+                    </tr>
+                </ui:repeat>
+                </table>
+            </h:form>
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http:www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="./szablon.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml">
+    <ui:define name="content">
+        <h1>Dodaj pozycje</h1>
+        <h:form>
+            <h:outputText id="Komunikat" />
+            <table>
+            <tr><td>Tytul</td><td><h:inputText id="tytul"
+            value="#{ksiegarniaBean.ksiegarnia.tytul}" required="true" />
+                </td></tr>
+            
+            <tr><td>Autor</td><td><h:inputText id="autor"
+            value="#{ksiegarniaBean.ksiegarnia.cena}" required="true" />
+                </td></tr>
+            
+            <tr><td>Cena</td><td><h:inputText id="cena"
+            value="#{ksiegarniaBean.ksiegarnia.cena}" required="true" />
+                </td></tr>
+            </table>
+            
+                                               
+        </h:form>
+    </ui:define>
+</ui:composition>
